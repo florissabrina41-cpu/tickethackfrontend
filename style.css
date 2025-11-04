@@ -55,7 +55,7 @@ p {
 
 #assets-list {
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
    align-items: stretch;
    justify-content: space-between;
 }
@@ -68,11 +68,38 @@ p {
     margin-left:50vh;
 }
 
-#div2 {
+#div2, #div1 {
    display: flex;
    flex-direction: column;
    justify-content: center;
     align-items: stretch;
      background-color: white;
     margin-right: 50vh;
+}
+
+.train {
+  display: flex;
+  flex-direction: column; /* image au-dessus du texte */
+  align-items: center;    /* centre horizontalement */
+  gap: 20px;              /* espace entre l'image et l'input */
+  margin: 40px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+.train img  {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;   /* 👈 espace sous l'image */
+}
+
+
+
+.train input {
+  width: 80%;             /* pour ne pas prendre toute la largeur */
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
 }
