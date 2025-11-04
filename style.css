@@ -1,33 +1,38 @@
-/* Bandeau de navigation */
+/* ---------- NAVBAR ---------- */
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à gauche, liens à droite */
+  justify-content: space-between;
   align-items: center;
-  background-color: #007bff; /* bleu */
+  background-color: #007bff;
   color: white;
-  padding: 20px 20px;
-  margin:0%;
+  padding: 20px;
+  margin: 0;
   font-family: Arial, sans-serif;
 }
 
-
+/* ---------- STRUCTURE GLOBALE ---------- */
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
 
 body {
-    height: 100vh;
-    width: 100%;
-    background-image: url("images/background.jpg"); 
-    background-position: center center; 
-    background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-image: url("images/background.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- TEXTES ---------- */
+h2, p {
+  color: white;
+  text-align: center;
+  margin-top: 0;
 }
 
 .nav-links a {
@@ -41,65 +46,89 @@ body {
   text-decoration: underline;
 }
 
-h2 {
-    color: white;
-    text-align: center;
-    margin-top: 0%;
-    
-}
-p {
-    color: white;
-    text-align: center;
-    margin-top: 0%;
-}
-
+/* ---------- CONTENEUR PRINCIPAL ---------- */
 #assets-list {
-   display: flex;
-   justify-content: space-around;
-   align-items: stretch;
-   justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;               /*  plus de séparation entre les deux div */
+  flex: 1;
+  margin-bottom: 40px;
 }
 
-#div1 {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-    background-color: white;
-    margin-left:50vh;
+/* ---------- BLOCS ---------- */
+#div1, #div2 {
+  background-color: white;  /* fond blanc conservé */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+  width: 260px;           
+  height: 220px;            
+  padding: 10px;            /* padding réduit pour moins d’espace autour du contenu */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-#div2, #div1 {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-    align-items: stretch;
-     background-color: white;
-    margin-right: 50vh;
-}
-
+/* ---------- TRAIN (image + texte) ---------- */
 .train {
   display: flex;
-  flex-direction: column; /* image au-dessus du texte */
-  align-items: center;    /* centre horizontalement */
-  gap: 20px;              /* espace entre l'image et l'input */
-  margin: 40px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
 }
 
-.train img  {
-  width: 150px;
-  height: auto;
-  margin-bottom: 20px;   /* 👈 espace sous l'image */
+.train img {
+  width: 100px;             /* taille adaptée pour div plus petite */
+  max-height: 80px;
+  object-fit: contain;
 }
 
+/* ---------- Ligne de séparation ---------- */
+.separator {
+  width: 70%;
+  height: 2px;
+  background-color: #3eb489;
+  border-radius: 1px;
+}
 
-
-.train input {
-  width: 80%;             /* pour ne pas prendre toute la largeur */
-  padding: 8px;
-  font-size: 14px;
+/* ---------- INPUTS & BUTTONS ---------- */
+#div1 input
+{  width: 90%;               /*  assez large pour voir tout le texte */
+  padding: 6px;
+  font-size: 13px;
   text-align: center;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc
+
+}
+.train input {
+  width: 90%;               /*  assez large pour voir tout le texte */
+  padding: 6px;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  border:#ccc;
+}
+
+#div1 button {
+  background-color: #3eb489;
+  color: white;
+  border: none;
+  padding: 6px;
+  width: 90%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  
+}
+
+#div1 button:hover {
+  background-color: #36a07a;
 }
