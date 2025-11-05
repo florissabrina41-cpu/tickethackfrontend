@@ -26,9 +26,14 @@ search.addEventListener("click", function () {
           .map(
             (trip) => `
     <div class="trip">
-      <p>${trip.departure} → ${trip.arrival} on ${new Date(
-              trip.date
-            ).toLocaleDateString()}</p>
+      <div class="trajet">${trip.departure} > ${trip.arrival}      
+      ${new Date(trip.date).toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })} <button class= "btn-book">Book</button>
+      </div>
+      <div class="id-trip">${trip._id}</div>
+            
     </div>
   `
           )

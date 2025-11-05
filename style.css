@@ -25,13 +25,14 @@ html, body {
 }
 
 body {
-background-image: url('./images/background.jpg');
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-min-height: 100vh;
-box-sizing: border-box;
+  background-image: url('./images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  box-sizing: border-box;
+
 }
 
 
@@ -66,7 +67,7 @@ h2, p {
 }
 
 /* ---------- BLOCS ---------- */
-#div1, #div2 {
+#div1 {
   background-color: white;  /* fond blanc conservé */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -81,8 +82,35 @@ h2, p {
   align-items: center;
   overflow: hidden;
   color: black;
+  font-family: Arial, sans-serif;
+  font-size: small;
+  
 
 }
+
+#div2{
+  background-color: white;  /* fond blanc conservé */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+  width: 300px;
+  height: 220px;
+  padding: 10px;            /* padding réduit pour moins d’espace autour du contenu */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: start;
+  overflow: hidden;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: small;
+  font-weight: 500;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
 
 /* ---------- TRAIN (image + texte) ---------- */
 .train {
@@ -128,6 +156,22 @@ h2, p {
   border:#ccc;
 }
 
+.trip p{
+  display: inline;
+  color: black;
+  margin: auto;
+  background-color: #f5EEEE ;
+  padding: 2px;
+}
+
+.trajet{
+  
+}
+
+.id-trip{
+  visibility: hidden;
+}
+
 #div1 button {
   background-color: #3eb489;
   color: white;
@@ -143,6 +187,19 @@ h2, p {
 #div1 button:hover {
   background-color: #36a07a;
 }
+
+.btn-book{
+  background-color: #3eb489;
+  color: white;
+  border: none;
+  padding: 6px;
+  width: 20%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+}
+
 
 content{
   display: block;
@@ -201,6 +258,14 @@ content{
   background-color: #f5EEEE;
   border-radius: 5px;
 }
+#icon-delete{
+  border: none;
+}
+
+.btn-delete{
+  border: none;
+
+}
 
 #cart-footer{
   display: flex;
@@ -229,4 +294,6 @@ content{
 #cart button:hover {
   background-color: #36a07a;
 }
+
+
 
