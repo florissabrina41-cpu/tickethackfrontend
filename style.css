@@ -10,8 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007bff;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 20px;
   margin: 0;
   font-family: Arial, sans-serif;
@@ -45,7 +45,7 @@ h2, p {
 }
 
 .nav-links a {
-  color: white;
+  color: black;
   text-decoration: none;
   margin-left: 20px;
   font-size: 16px;
@@ -71,8 +71,8 @@ h2, p {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 
-  width: 260px;           
-  height: 220px;            
+  width: 260px;
+  height: 220px;
   padding: 10px;            /* padding réduit pour moins d’espace autour du contenu */
 
   display: flex;
@@ -81,7 +81,7 @@ h2, p {
   align-items: center;
   overflow: hidden;
   color: black;
-  
+
 }
 
 /* ---------- TRAIN (image + texte) ---------- */
@@ -137,26 +137,96 @@ h2, p {
   border-radius: 5px;
   cursor: pointer;
   font-size: 13px;
-  
+
 }
 
 #div1 button:hover {
   background-color: #36a07a;
 }
 
-container{
-    background-color: bisque;
-    border: red;
-    height: 100vh;
-    width: 100vw;
+content{
+  display: block;
+  background-color: #ccc;
+  border-color: white;
+  border-style: inset;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-content{
-   display: block;
-    background-color: #ccc;
-    border: red;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+.logo{
+  text-decoration: solid;
+  color: #36a07a;
+  font-weight: bold;
 }
+
+.container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content:  space-between ;
+  align-items: stretch;
+  overflow: hidden;
+  height: 30%;
+  max-height: 60%;
+  width: 80%;
+  top: 25%;
+  left: 10%;
+  position: absolute;
+  margin: auto;
+  background-color: white;
+  border-style: initial;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  color: black;
+
+}
+#cart-title{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.cart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  font-weight: bold;
+  margin: 0% 4%;
+  background-color: #f5EEEE;
+  border-radius: 5px;
+}
+
+#cart-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: #00153E;
+  color: white;
+  padding: 1% 3% 0% 3%;
+  font-weight: bold;
+
+}
+#btn-purchase{
+  background-color: #3eb489;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 20%;
+}
+
+
+#cart button:hover {
+  background-color: #36a07a;
+}
+

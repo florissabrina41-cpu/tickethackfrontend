@@ -1,37 +1,43 @@
+const search = document.getElementById("searchBtn");
 
-  const search = document.getElementById('searchBtn');
+search.addEventListener("click", function () {
+  const departure = document.getElementById("Departure").value;
+  const arrival = document.getElementById("arrival").value;
+  const date = document.getElementById("date").value;
 
-  search.addEventListener('click', function () {
-    
-  const departure = document.getElementById('Departure').value;
-    const arrival = document.getElementById('arrival').value;
-    const date = document.getElementById('date').value;
-    console.log (departure, arrival,date); 
+  console.log(departure, arrival, date);
 
-    // Appel endpoint /byDate
-  
-     fetch('http://localhost:3000/trips/byDate') 
-      method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ departure, arrival, date })
+  // Appel endpoint /byDate
+  fetch("http://localhost:3000/trips/byDate", {
+    method: "POST", // :warning: il fallait mettre ça dans l'objet options
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ departure, arrival, date }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
 
-    .then(response => response.json())
-    .then (data => {console.log (data)})
-      });
-
-     
-
-      // AFFICHER LES RESULATS
-      /*const resultsDiv = document.getElementById('div2');
-      resultsDiv.innerHTML = data.trips.map(trip => `
-        <div class="trip">
-          <p>${trip.departure} → ${trip.arrival} on ${new Date(trip.date).toLocaleDateString()}</p>
-        </div>
-      `).join('');
-
-    } catch (error) {
+      // AFFICHER LES RESULTATS
+      const resultsDiv = document.getElementById("div2");
+      if (data.trips && data.trips.length > 0) {
+        resultsDiv.innerHTML = data.trips
+          .map(
+            (trip) => `
+    <div class="trip">
+      <p>${trip.departure} → ${trip.arrival} on ${new Date(
+              trip.date
+            ).toLocaleDateString()}</p>
+    </div>
+  `
+          )
+          .join("");
+      } else {
+        resultsDiv.innerHTML = "<p>Aucun voyage trouvé</p>";
+      }
+    })
+    .catch((error) => {
       console.error(error);
-    }*/
-  
+    });
+});
